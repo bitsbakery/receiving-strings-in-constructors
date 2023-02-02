@@ -1,4 +1,4 @@
-# passing-strings-to-constructors
+# Receiving strings in constructors
 
 This test compares different methods of receiving string parameters in constructors, taking into account all optimizations performed by the compiler.
 

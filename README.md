@@ -30,6 +30,6 @@ ctor(cstr) ctor()  copy()  copy=   move()  move=
 
 The obtained results show that **the most efficient method of receiving string parameters in constructors is by creating a template constructor and perfect-forwarding string parameters to respective data members:**
 ```cpp
-template<StrignConvertable T>
+template<StrignConvertible T>
 UserPerfectFwd(T&& str) : name(std::forward<T>(str)) { }
 ```

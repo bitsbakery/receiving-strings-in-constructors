@@ -124,14 +124,14 @@ struct UserByRVal
 };
 
 template <typename T>
-concept StrignConvertable = 
+concept StrignConvertible = 
 	std::is_convertible_v<T, DbgStr>;
 
 struct UserPerfectFwd
 {
 	DbgStr name;
 
-	template<StrignConvertable T>
+	template<StrignConvertible T>
 	UserPerfectFwd(T&& str) : name(std::forward<T>(str)) { }
 };
 

@@ -1,6 +1,6 @@
 # Receiving strings in constructors
 
-This test compares different methods of receiving string parameters in constructors, taking into account all optimizations performed by the compiler.
+This test compares different methods of receiving string parameters in constructors, taking into account all optimizations performed by compilers.
 
 The test counts the number of invocations of all constructors and assignment operators of a special class `DbgStr`.
 
@@ -30,6 +30,6 @@ ctor(cstr) ctor()  copy()  copy=   move()  move=
 
 The obtained results show that **the most efficient method of receiving string parameters in constructors is by creating a template constructor and perfect-forwarding string parameters to respective data members:**
 ```cpp
-template<StrignConvertible T>
+template<StringConvertible T>
 UserPerfectFwd(T&& str) : name(std::forward<T>(str)) { }
 ```
